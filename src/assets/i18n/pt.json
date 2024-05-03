@@ -2,10 +2,18 @@
 	"components": {
 		"home": {
 			"fullstack-developer": "Desenvolvedor Fullstack.",
-			"hello-i-am": "Olá, meu nome é André Pinto e eu sou um desenvolvedor criativo e independente do Brasil."
+			"hello-i-am": "Olá, meu nome é André Pinto e eu sou um desenvolvedor de software criativo e independente do Brasil."
 		},
 		"header": {
 			"portfolio": "Portfólio André Pinto"
+		},
+		"experience": {
+			"present": "Presente",
+			"fullstack-developer": "Desenvolvedor Fullstack",
+			"internship-student": "Estágio",
+			"lacuna-software-experience": "Desenvolvendo uma aplicação para autoridades de registro. Participando de todas as etapas do desenvolvimento, incluindo modelagem de banco de dados, backend e frontend. Trabalhando em todas as funcionalidades do software como videoconferência, coleta biométrica, emissão de certificados digitais e assinatura digital. Desenvolvendo testes unitários, testes de integração e testes E2E (criando os padrões aderidos pela empresa). Manutenção de aplicações existentes, com melhorias de código, desenvolvimento de novas funcionalidades e correção de bugs. Desenvolvimento de aplicações multi tenant.",
+			"tribunal-de-contas-da-uniao-experience": "Dando manutenção e desenvolvendo novos aplicativos para uso interno.",
+			"companhia-da-terra-experience": "Desenvolvendo uma aplicação para um pet shot."
 		}
 	}
 }

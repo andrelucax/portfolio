@@ -2,10 +2,18 @@
 	"components": {
 		"home": {
 			"fullstack-developer": "Fullstack Developer.",
-			"hello-i-am": "Hi, my name is André Pinto and I'm a creative and independent developer from Brazil."
+			"hello-i-am": "Hi, my name is André Pinto and I'm a creative and independent software developer from Brazil."
 		},
 		"header": {
 			"portfolio": "Portfolio André Pinto"
+		},
+		"experience": {
+			"present": "Present",
+			"fullstack-developer": "Fullstack Developer",
+			"internship-student": "Internship Student",
+			"lacuna-software-experience": "Developing an application for registration authorities. Participating in all stages of development, including database modeling, backend and frontend. Working on all software functionalities such as video conferencing, biometric collection, issuance of digital certificates and digital signatures. Developing unit tests, integration tests and E2E tests (creating standards adhered to by the company). Maintenance of existing applications, with code improvements, development of new features and bug fixes. Development of multi-tenant applications.",
+			"tribunal-de-contas-da-uniao-experience": "Maintaining and developing new applications for internal use.",
+			"companhia-da-terra-experience": "Developing an application for a pet shop."
 		}
 	}
 }

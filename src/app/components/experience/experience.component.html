@@ -2,29 +2,29 @@
 	<div class="col-lg-6 col-12">
 		<ng-container *ngTemplateOutlet="experienceCard; context: {
 			periodStart: '09/2021',
-			periodEnd: 'Present',
+			periodEnd: 'present',
 			companyUrl: 'https://www.lacunasoftware.com/',
-			role: 'Fullstack Developer',
+			role: 'components.experience.fullstack-developer' | translate,
 			companyName: 'Lacuna Software',
-			companyExperience: 'Developing an application for registration authorities from scratch, including modeling the database, backend and frontend. Working on various projects. Working on all software features such as video conferencing, biometric collection, issuance of digital certificates and digital signature. Developing unit tests, integration tests and E2E test (creating all patterns since there was no tests before). Maintaining existing applications, with code improvements, development of new features and bug fixes. Developing multi tenant applications.',
+			companyExperience:'components.experience.lacuna-software-experience' | translate,
 			technologies: ['.NET', 'C#', 'Angular', 'TypeScript'],
 		}"></ng-container>
 		<ng-container *ngTemplateOutlet="experienceCard; context: {
 			periodStart: '03/2021',
 			periodEnd: '08/2021',
 			companyUrl: 'https://portal.tcu.gov.br/inicio/',
-			role: 'Internship Student',
+			role: 'components.experience.internship-student' | translate,
 			companyName: 'Tribunal de Contas da União',
-			companyExperience: 'Maintaining and developing new applications for internal use.',
+			companyExperience: 'components.experience.tribunal-de-contas-da-uniao-experience' | translate,
 			technologies: ['Oracle APEX'],
 		}"></ng-container>
 		<ng-container *ngTemplateOutlet="experienceCard; context: {
 			periodStart: '09/2020',
 			periodEnd: '02/2021',
 			companyUrl: 'https://www.companhiadaterra.com/',
-			role: 'Internship Student',
+			role: 'components.experience.internship-student' | translate,
 			companyName: 'Companhia da Terra',
-			companyExperience: 'Developing an application for a pet shop from scratch.',
+			companyExperience: 'components.experience.companhia-da-terra-experience' | translate,
 			technologies: ['Django', 'React Native'],
 		}"></ng-container>
 	</div>
@@ -73,7 +73,12 @@
 >
 	<div class="d-flex experience-card p-2" (click)="goToCompany(companyUrl)">
 		<div class="me-3">
-			<span class="experience-period">{{periodStart}} — <span [ngClass]="{'text-primary': periodEnd == 'Present'}">{{periodEnd}}</span></span>
+			<span class="experience-period">
+				{{periodStart}}
+				—
+				<span *ngIf="periodEnd == 'present'" class="text-primary">{{'components.experience.present' | translate}}</span>
+				<span *ngIf="periodEnd != 'present'">{{periodEnd}}</span>
+			</span>
 		</div>
 		<div class="experience">
 			<h2>{{role}} · <span class="experience-company">{{companyName}}<mat-icon
