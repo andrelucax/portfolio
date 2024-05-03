@@ -5,7 +5,8 @@
 			"hello-i-am": "Hi, my name is André Pinto and I'm a creative and independent software developer from Brazil."
 		},
 		"header": {
-			"portfolio": "Portfolio André Pinto"
+			"portfolio": "Portfolio André Pinto",
+			"contact": "Contact"
 		},
 		"experience": {
 			"present": "Present",

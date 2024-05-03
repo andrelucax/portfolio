@@ -19,7 +19,9 @@ import { SvgIconStartupService } from './services/svg-icon-startup.service';
 import { TranslateStartupService } from './services/translate-startup.service';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { MatChipsModule } from '@angular/material/chips';
-import { ConsoleGreetingsService } from './services/console-greetings.service';
+import { ConsoleGreetingsService } from './services/console-greetings.service'; 3
+import { MatDialogModule } from '@angular/material/dialog';
+import { AndreBotDialogComponent } from './components/dialogs/andre-bot-dialog/andre-bot-dialog.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -33,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		HeaderComponent,
 		HomeComponent,
 		ExperienceComponent,
+		AndreBotDialogComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -44,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		HttpClientModule,
 		MatMenuModule,
 		MatChipsModule,
+		MatDialogModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,

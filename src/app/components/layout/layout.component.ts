@@ -46,7 +46,7 @@ export class LayoutComponent implements OnInit {
 
 	toogleTheme() {
 		this.isDark = !this.isDark;
-		if (this.isDark) {
+		if (!this.isDark) {
 			this.overlayContainer.getContainerElement().classList.add('light-theme');
 		} else {
 			this.overlayContainer.getContainerElement().classList.remove('light-theme');

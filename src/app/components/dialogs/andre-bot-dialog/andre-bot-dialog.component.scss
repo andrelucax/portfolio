@@ -1,0 +1,38 @@
+$headerHeight: 70px;
+
+.chat {
+	width: 350px;
+	height: 600px;
+}
+
+.header {
+	height: $headerHeight;
+}
+
+.content{
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(6px);
+	height: calc(100% - $headerHeight);
+}
+
+.photo {
+	height: 38px;
+	width: 38px;
+	border: 2px solid white;
+	border-radius: 50%;
+}
+
+.question-message {
+    margin-left: auto;
+}
+
+.message {
+	margin-top: 10px;
+	border-radius: 10px;
+	width: fit-content;
+
+}
+
+.message + .message {
+	margin-top: 10px;
+}

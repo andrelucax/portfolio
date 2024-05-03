@@ -9,6 +9,8 @@
 		'accent': mat.get-color-from-palette(map.get($color-config, 'accent'), 500),
 		'warn': mat.get-color-from-palette(map.get($color-config, 'warn'), 500),
 		'primary-contrast': mat.get-color-from-palette(map.get($color-config, 'primary'), '500-contrast'),
+		'primary-light': mat.get-color-from-palette(map.get($color-config, 'primary'), 100),
+		'primary-dark': mat.get-color-from-palette(map.get($color-config, 'primary'), 700),
 	);
 
 	@each $text, $color in $theme-palette {

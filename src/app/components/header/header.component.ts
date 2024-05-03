@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
+import { AndreBotDialogComponent } from '../dialogs/andre-bot-dialog/andre-bot-dialog.component';
+import { Overlay } from '@angular/cdk/overlay';
 
 @Component({
 	selector: 'app-header',
@@ -23,6 +26,8 @@ export class HeaderComponent {
 
 	constructor(
 		private translate: TranslateService,
+		private dialog: MatDialog,
+		private overlay: Overlay,
 	) {
 
 	}
@@ -36,6 +41,13 @@ export class HeaderComponent {
 	}
 
 	contactMe() {
-
+		this.dialog.open(AndreBotDialogComponent, {
+			position: {
+				right: '40px',
+				bottom: '40px',
+			},
+			panelClass: 'dialog-background-transparent',
+			scrollStrategy: this.overlay.scrollStrategies.noop(),
+		});
 	}
 }

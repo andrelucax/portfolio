@@ -1,0 +1,31 @@
+<div class="chat">
+	<mat-toolbar color="primary" class="p-0">
+		<img class="photo m-3" src="/assets/img/andrelucax.jpg">
+		<div class="d-flex flex-column justify-content-center">
+			<h5 class="mb-0">André Bot</h5>
+			<span>Ask me a question</span>
+		</div>
+	</mat-toolbar>
+	<div class="content p-2 d-flex flex-column">
+		@for (m of messages; track $index) {
+			@if (m.answer) {
+				<ng-container *ngTemplateOutlet="answerMessage; context: {
+					message: m.message
+				}"></ng-container>
+			}
+			@if (!m.answer) {
+				<ng-container *ngTemplateOutlet="questionMessage; context: {
+					message: m.message
+				}"></ng-container>
+			}
+		}
+	</div>
+</div>
+
+<ng-template #answerMessage let-message="message">
+	<span class="p-3 message bg-primary-light">{{message}}</span>
+</ng-template>
+
+<ng-template #questionMessage let-message="message">
+	<span class="p-3 message question-message bg-primary-dark text-white">{{message}}</span>
+</ng-template>
