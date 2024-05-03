@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-andre-bot-dialog',
@@ -20,22 +20,24 @@ export class AndreBotDialogComponent implements OnInit {
 
 	messages: Message[] = [];
 
-	constructor(
-		private translate: TranslatePipe,
-	) { }
+	constructor(private translateService: TranslateService) {
+
+	}
 
 	ngOnInit(): void {
+		console.log(this.translateService.currentLang);
+
 		this.messages.push(
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.hello"),
+				translationKey: "components.dialogs.andre-bot-dialog.hello",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.im-andre-bot"),
+				translationKey: "components.dialogs.andre-bot-dialog.im-andre-bot",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.how-can-i-help"),
+				translationKey: "components.dialogs.andre-bot-dialog.how-can-i-help",
 				answer: true,
 			},
 		);
@@ -66,26 +68,26 @@ export class AndreBotDialogComponent implements OnInit {
 	hello() {
 		this.messages.push(
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.just-saying-hello"),
+				translationKey: "components.dialogs.andre-bot-dialog.just-saying-hello",
 				answer: false
 			}
 		);
 
 		let answers: Message[] = [
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.hi"),
+				translationKey: "components.dialogs.andre-bot-dialog.hi",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.thanks-for-passing-by"),
+				translationKey: "components.dialogs.andre-bot-dialog.thanks-for-passing-by",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.hope-youre-having-fun"),
+				translationKey: "components.dialogs.andre-bot-dialog.hope-youre-having-fun",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.can-i-do-anything-else-for-you"),
+				translationKey: "components.dialogs.andre-bot-dialog.can-i-do-anything-else-for-you",
 				answer: true,
 			},
 		];
@@ -96,23 +98,24 @@ export class AndreBotDialogComponent implements OnInit {
 	hire() {
 		this.messages.push(
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.wed-like-to-hire-you"),
+				translationKey: "components.dialogs.andre-bot-dialog.wed-like-to-hire-you",
 				answer: false
 			}
 		);
 
 		let answers: Message[] = [
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.thats-awesome"),
+				translationKey: "components.dialogs.andre-bot-dialog.thats-awesome",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.send me a message-and-lets-chat-further"),
+				translationKey: "components.dialogs.andre-bot-dialog.send me a message-and-lets-chat-further",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.you-can-call-me-at", { mail: "andrelucax@gmail.com" }),
+				translationKey: "components.dialogs.andre-bot-dialog.you-can-call-me-at",
 				answer: true,
+				translationArguments: { mail: "andrelucax@gmail.com" },
 			},
 		];
 
@@ -123,18 +126,18 @@ export class AndreBotDialogComponent implements OnInit {
 		this.isAnswering = true;
 		this.messages.push(
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.send-a-message"),
+				translationKey: "components.dialogs.andre-bot-dialog.send-a-message",
 				answer: false
 			}
 		);
 
 		let answers: Message[] = [
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.im-sending-you-to-your-mail"),
+				translationKey: "components.dialogs.andre-bot-dialog.im-sending-you-to-your-mail",
 				answer: true,
 			},
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.can-i-do-anything-else-for-you"),
+				translationKey: "components.dialogs.andre-bot-dialog.can-i-do-anything-else-for-you",
 				answer: true,
 			},
 		];
@@ -147,14 +150,14 @@ export class AndreBotDialogComponent implements OnInit {
 		this.isAnswering = true;
 		this.messages.push(
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.see-other-options"),
+				translationKey: "components.dialogs.andre-bot-dialog.see-other-options",
 				answer: false
 			}
 		);
 
 		let messagesToAdd: Message[] = [
 			{
-				message: this.translate.transform("components.dialogs.andre-bot-dialog.ok-here-you-go"),
+				translationKey: "components.dialogs.andre-bot-dialog.ok-here-you-go",
 				answer: true,
 			},
 		];
@@ -179,8 +182,9 @@ export class AndreBotDialogComponent implements OnInit {
 }
 
 export interface Message {
-	message: string;
+	translationKey: string;
 	answer: boolean;
+	translationArguments?: any;
 }
 
 export enum QuestionOptionTypes {
