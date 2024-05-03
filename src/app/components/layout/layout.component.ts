@@ -26,11 +26,11 @@ export class LayoutComponent implements OnInit {
 	}
 
 	ngAfterViewInit(): void {
-		document.getElementById('sidenav-content')?.addEventListener('scroll', this.checkLogoAnimation);
+		addEventListener('scroll', this.checkLogoAnimation);
 	}
 
 	ngOnDestroy(): void {
-		document.getElementById('sidenav-content')?.removeEventListener('scroll', this.checkLogoAnimation);
+		removeEventListener('scroll', this.checkLogoAnimation);
 	}
 
 	checkLogoAnimation = (_: any) => {
