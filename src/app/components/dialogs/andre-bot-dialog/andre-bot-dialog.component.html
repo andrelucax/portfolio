@@ -13,12 +13,14 @@
 		@for (m of messages; track $index) {
 			@if (m.answer) {
 				<ng-container *ngTemplateOutlet="answerMessage; context: {
-					translationKey: m.translationKey
+					translationKey: m.translationKey,
+					translationArguments: m.translationArguments,
 				}"></ng-container>
 			}
 			@if (!m.answer) {
 				<ng-container *ngTemplateOutlet="questionMessage; context: {
-					translationKey: m.translationKey
+					translationKey: m.translationKey,
+					translationArguments: m.translationArguments,
 				}"></ng-container>
 			}
 		}
@@ -43,12 +45,12 @@
 	</div>
 </div>
 
-<ng-template #answerMessage let-translationKey="translationKey">
-	<span class="p-3 message bg-primary-light">{{translationKey | translate}}</span>
+<ng-template #answerMessage let-translationKey="translationKey" let-translationArguments="translationArguments">
+	<span class="p-3 message bg-primary-light">{{translationKey | translate:translationArguments}}</span>
 </ng-template>
 
-<ng-template #questionMessage let-translationKey="translationKey">
-	<span class="p-3 message question-message bg-primary-dark text-white">{{translationKey | translate}}</span>
+<ng-template #questionMessage let-translationKey="translationKey" let-translationArguments="translationArguments">
+	<span class="p-3 message question-message bg-primary-dark text-white">{{translationKey | translate:translationArguments}}</span>
 </ng-template>
 
 <ng-template #questionOption let-type="type">
