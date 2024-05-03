@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-between">
+<div class="d-none d-md-flex align-items-center justify-content-between">
 	<div class="d-flex align-items-center">
 		<svg class="logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path [class.logo-light-shield-animation]="animateLogo" d="M498 130L500 500V870L208 700L148 250L498 130Z" fill="#00FFFF"/>
@@ -17,9 +17,14 @@
 		</button>
 		<mat-menu #langMenu="matMenu">
 			@for (lang of supportedLangs; track $index) {
-				<span (click)="changeLangue(lang)" mat-menu-item>{{lang}}</span>
+				<span (click)="changeLang(lang)" mat-menu-item>{{lang}}</span>
 			}
 		</mat-menu>
 		<button [disabled]="isBotDialogOpen" class="me-e" mat-raised-button (click)="contactMe()" color="accent">{{'components.header.contact' | translate}}</button>
 	</div>
+</div>
+<div class="d-flex d-md-none">
+	<button mat-flat-button class="menu" (click)="toogleMenu()">
+		<mat-icon class="m-0">menu</mat-icon>
+	</button>
 </div>

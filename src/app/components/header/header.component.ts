@@ -1,9 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
-import { AndreBotDialogComponent } from '../dialogs/andre-bot-dialog/andre-bot-dialog.component';
-import { Overlay } from '@angular/cdk/overlay';
-import { Constants } from '../../classes/constants';
 
 @Component({
 	selector: 'app-header',
@@ -13,7 +9,16 @@ import { Constants } from '../../classes/constants';
 export class HeaderComponent {
 
 	@Output()
+	onToogleMenu: EventEmitter<void> = new EventEmitter<void>();
+
+	@Output()
 	onToogleTheme: EventEmitter<void> = new EventEmitter<void>();
+
+	@Output()
+	onChangeLang: EventEmitter<string> = new EventEmitter<string>();
+
+	@Output()
+	onContactMe: EventEmitter<void> = new EventEmitter<void>();
 
 	@Input()
 	isDark: boolean = true;
@@ -21,6 +26,7 @@ export class HeaderComponent {
 	@Input("animateLogo")
 	animateLogo: boolean;
 
+	@Input("isBotDialogOpen")
 	isBotDialogOpen: boolean;
 
 	get supportedLangs() {
@@ -33,29 +39,21 @@ export class HeaderComponent {
 
 	constructor(
 		private translate: TranslateService,
-		private dialog: MatDialog,
-		private overlay: Overlay,
 	) { }
 
 	toogleTheme() {
 		this.onToogleTheme.emit();
 	}
 
-	changeLangue(lang: string) {
-		this.translate.use(lang);
-		sessionStorage.setItem(Constants.preferredLangSessionStorageKey, lang);
+	changeLang(lang: string) {
+		this.onChangeLang.emit(lang);
 	}
 
 	contactMe() {
-		this.isBotDialogOpen = true;
-		this.dialog.open(AndreBotDialogComponent, {
-			position: {
-				right: '40px',
-				bottom: '40px',
-			},
-			panelClass: 'andrep-bot-dialog-pannel',
-			scrollStrategy: this.overlay.scrollStrategies.noop(),
-			hasBackdrop: false,
-		}).afterClosed().subscribe(_ => this.isBotDialogOpen = false);
+		this.onContactMe.emit();
+	}
+
+	toogleMenu() {
+		this.onToogleMenu.emit();
 	}
 }

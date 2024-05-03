@@ -1,6 +1,12 @@
-import { OverlayContainer } from '@angular/cdk/overlay';
+import { Overlay, OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSidenavContent } from '@angular/material/sidenav';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSidenav, MatSidenavContent } from '@angular/material/sidenav';
+import { AndreBotDialogComponent } from '../dialogs/andre-bot-dialog/andre-bot-dialog.component';
+import { Constants } from '../../classes/constants';
+import { TranslateService } from '@ngx-translate/core';
+
+const widthThreshold: number = 767;
 
 @Component({
 	selector: 'app-layout',
@@ -10,13 +16,25 @@ import { MatSidenavContent } from '@angular/material/sidenav';
 export class LayoutComponent implements OnInit {
 
 	@ViewChild("sideNavContent") sideNavContent: MatSidenavContent;
+	@ViewChild("sideNav") sideNav: MatSidenav;
 
 	isDark: boolean = true;
 
 	animateLogo: boolean = true;
 
+	isBotDialogOpen: boolean;
+
+	screenWidth: number;
+
+	get supportedLangs() {
+		return this.translate.langs;
+	}
+
 	constructor(
 		private overlayContainer: OverlayContainer,
+		private dialog: MatDialog,
+		private overlay: Overlay,
+		private translate: TranslateService,
 	) { }
 
 	ngOnInit(): void {
@@ -27,10 +45,18 @@ export class LayoutComponent implements OnInit {
 
 	ngAfterViewInit(): void {
 		addEventListener('scroll', this.checkLogoAnimation);
+		addEventListener('resize', this.handleResize);
 	}
 
 	ngOnDestroy(): void {
 		removeEventListener('scroll', this.checkLogoAnimation);
+		removeEventListener('resize', this.handleResize);
+	}
+
+	handleResize = (_?: any) => {
+		if (window.innerWidth > widthThreshold) {
+			this.sideNav?.close();
+		}
 	}
 
 	checkLogoAnimation = (_: any) => {
@@ -51,5 +77,27 @@ export class LayoutComponent implements OnInit {
 		} else {
 			this.overlayContainer.getContainerElement().classList.remove('light-theme');
 		}
+	}
+
+	toogleMenu() {
+		this.sideNav.toggle();
+	}
+
+	changeLang(lang: string) {
+		this.translate.use(lang);
+		sessionStorage.setItem(Constants.preferredLangSessionStorageKey, lang);
+	}
+
+	contactMe() {
+		this.isBotDialogOpen = true;
+		this.dialog.open(AndreBotDialogComponent, {
+			position: {
+				right: '40px',
+				bottom: '40px',
+			},
+			panelClass: 'andrep-bot-dialog-pannel',
+			scrollStrategy: this.overlay.scrollStrategies.noop(),
+			hasBackdrop: false,
+		}).afterClosed().subscribe(_ => this.isBotDialogOpen = false);
 	}
 }
