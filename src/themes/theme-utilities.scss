@@ -4,7 +4,12 @@
 @mixin theme-utilities($theme) {
 	$color-config: mat.get-color-config($theme);
 
-	$theme-palette: ( 'primary': mat.get-color-from-palette(map.get($color-config, 'primary'), 500), 'accent': mat.get-color-from-palette(map.get($color-config, 'accent'), 500), 'warn': mat.get-color-from-palette(map.get($color-config, 'warn'), 500) );
+	$theme-palette: (
+		'primary': mat.get-color-from-palette(map.get($color-config, 'primary'), 500),
+		'accent': mat.get-color-from-palette(map.get($color-config, 'accent'), 500),
+		'warn': mat.get-color-from-palette(map.get($color-config, 'warn'), 500),
+		'primary-contrast': mat.get-color-from-palette(map.get($color-config, 'primary'), '500-contrast'),
+	);
 
 	@each $text, $color in $theme-palette {
 		.text-#{""+$text} {
