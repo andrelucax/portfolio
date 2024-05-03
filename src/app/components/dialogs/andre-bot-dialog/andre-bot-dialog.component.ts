@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-andre-bot-dialog',
@@ -19,10 +18,6 @@ export class AndreBotDialogComponent implements OnInit {
 	optionType: OptionsTypes = OptionsTypes.Default;
 
 	messages: Message[] = [];
-
-	constructor(private translateService: TranslateService) {
-
-	}
 
 	ngOnInit(): void {
 		this.messages.push(
