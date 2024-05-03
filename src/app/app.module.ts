@@ -10,13 +10,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LayoutComponent,
-  HeaderComponent,
-  HomeComponent,
+		HeaderComponent,
+		HomeComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -24,6 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 		MatSidenavModule,
 		MatToolbarModule,
 		MatButtonModule,
+		MatIconModule,
 	],
 	providers: [
 		provideAnimationsAsync()

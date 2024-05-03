@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenavContent } from '@angular/material/sidenav';
 
 @Component({
@@ -6,11 +7,23 @@ import { MatSidenavContent } from '@angular/material/sidenav';
 	templateUrl: './layout.component.html',
 	styleUrl: './layout.component.scss'
 })
-export class LayoutComponent {
+export class LayoutComponent implements OnInit {
 
 	@ViewChild("sideNavContent") sideNavContent: MatSidenavContent;
 
+	isDark: boolean = true;
+
 	animateLogo: boolean = true;
+
+	constructor(
+		private overlayContainer: OverlayContainer,
+	) { }
+
+	ngOnInit(): void {
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+			this.toogleTheme();
+		}
+	}
 
 	ngAfterViewInit(): void {
 		this.sideNavContent.getElementRef().nativeElement.addEventListener('scroll', this.checkLogoAnimation);
@@ -28,6 +41,15 @@ export class LayoutComponent {
 			this.animateLogo = false;
 		} else {
 			this.animateLogo = true;
+		}
+	}
+
+	toogleTheme() {
+		this.isDark = !this.isDark;
+		if (this.isDark) {
+			this.overlayContainer.getContainerElement().classList.add('light-theme');
+		} else {
+			this.overlayContainer.getContainerElement().classList.remove('light-theme');
 		}
 	}
 }

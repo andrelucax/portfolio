@@ -1,4 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import "./themes/light-theme.scss";
+@import "./themes/dark-theme.scss";
+@import './themes/theme-utilities.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.w-100 {
+	width: 100%;
+}
+
+// Apply the dark theme by default
+@include mat.all-component-colors($dark-theme);
+@include theme-utilities($dark-theme);
+
+// Apply the light theme only when the user prefers light themes
+.light-theme {
+	@include mat.all-component-colors($light-theme);
+	@include theme-utilities($light-theme);
+}

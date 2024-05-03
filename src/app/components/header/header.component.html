@@ -1,9 +1,16 @@
-<div class="d-flex align-items-center">
-	<svg class="logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path [class.logo-light-shield-animation]="animateLogo" d="M498 130L500 500V870L208 700L148 250L498 130Z" fill="#00FFFF"/>
-		<path [class.logo-dark-shield-animation]="animateLogo" d="M498 130L848 250L788 700L500 870V500L498 130Z" fill="#00CACA"/>
-		<path d="M460 320H500V375L440 540H500V595H425L390 680H325L460 320Z" fill="white"/>
-		<path d="M500 320H565V625H675V680H500V320Z" fill="white"/>
-	</svg>
-	<span>Portfolio André Pinto</span>
+<div class="d-flex align-items-center justify-content-between">
+	<div class="d-flex align-items-center">
+		<svg class="logo" width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path [class.logo-light-shield-animation]="animateLogo" d="M498 130L500 500V870L208 700L148 250L498 130Z" fill="#00FFFF"/>
+			<path [class.logo-dark-shield-animation]="animateLogo" d="M498 130L848 250L788 700L500 870V500L498 130Z" fill="#00CACA"/>
+			<path d="M460 320H500V375L440 540H500V595H425L390 680H325L460 320Z" fill="white"/>
+			<path d="M500 320H565V625H675V680H500V320Z" fill="white"/>
+		</svg>
+		<span>Portfolio André Pinto</span>
+	</div>
+	<div>
+		<button class="me-2" mat-icon-button (click)="toogleTheme()">
+			<mat-icon>{{isDark ? 'dark_mode' : 'light_mode'}}</mat-icon>
+		</button>
+	</div>
 </div>
