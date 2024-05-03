@@ -38,7 +38,10 @@ export class LayoutComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+		const storedPreferredTheme = sessionStorage.getItem(Constants.preferredThemeSessionStorageKey);
+		if (storedPreferredTheme && storedPreferredTheme == 'light') {
+			this.toogleTheme();
+		} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
 			this.toogleTheme();
 		}
 	}
@@ -73,8 +76,10 @@ export class LayoutComponent implements OnInit {
 	toogleTheme() {
 		this.isDark = !this.isDark;
 		if (!this.isDark) {
+			sessionStorage.setItem(Constants.preferredThemeSessionStorageKey, 'light');
 			this.overlayContainer.getContainerElement().classList.add('light-theme');
 		} else {
+			sessionStorage.setItem(Constants.preferredThemeSessionStorageKey, 'dark');
 			this.overlayContainer.getContainerElement().classList.remove('light-theme');
 		}
 	}
