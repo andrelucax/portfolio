@@ -39,10 +39,14 @@ export class LayoutComponent implements OnInit {
 
 	ngOnInit(): void {
 		const storedPreferredTheme = sessionStorage.getItem(Constants.preferredThemeSessionStorageKey);
-		if (storedPreferredTheme && storedPreferredTheme == 'light') {
-			this.toogleTheme();
-		} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-			this.toogleTheme();
+		if (storedPreferredTheme) {
+			if (storedPreferredTheme == 'light') {
+				this.toogleTheme();
+			}
+		} else {
+			if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+				this.toogleTheme();
+			}
 		}
 	}
 
