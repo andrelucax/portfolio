@@ -17,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatMenuModule } from '@angular/material/menu';
 import { SvgIconStartupService } from './services/svg-icon-startup.service';
 import { TranslateStartupService } from './services/translate-startup.service';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,6 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		LayoutComponent,
 		HeaderComponent,
 		HomeComponent,
+  ExperienceComponent,
 	],
 	imports: [
 		BrowserModule,

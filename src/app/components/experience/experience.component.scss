@@ -1,0 +1,17 @@
+.eyes, .eyes .eye {
+	position: absolute;
+}
+
+.sketch-container {
+	display: grid;
+	place-items: center;
+	position: relative;
+}
+
+.left-eye {
+	left: -40px;
+}
+
+.right-eye {
+	left: 40px;
+}
