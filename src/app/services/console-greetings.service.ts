@@ -31,6 +31,6 @@ export class ConsoleGreetingsService {
 			"@@@@@@@@@@@@@@@@@@@@@@&#.         /&@@@@@@@@@@@@@@\n" +
 			"@@@@@@@@@@@@@@@@@@@@@@@@@@@&&&&@@@@@@@@@@@@@@@@@@@\n"
 		);
-		console.log("Hello there! If you are interested in the code you can check out https://github.com/andrelucax"); // TODO portfolio github link
+		console.log("Hello there! If you are interested in the code you can check it out on https://github.com/andrelucax"); // TODO portfolio github link
 	}
 }
