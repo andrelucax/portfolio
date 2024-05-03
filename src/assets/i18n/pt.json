@@ -10,16 +10,16 @@
 				"see-other-options": "Ver outras opções",
 				"hello": "Olá!",
 				"im-andre-bot": "Eu sou o Bot André. Estou aqui para ajudá-lo.",
-				"how-can-i-help": "Como posso ajud-alo?",
+				"how-can-i-help": "Como posso ajudá-lo?",
 				"hi": "Oi!",
 				"thanks-for-passing-by": "Obrigado por passar por aqui",
 				"hope-youre-having-fun": "Espero que esteja se divertindo 😉",
 				"can-i-do-anything-else-for-you": "Posso ajudá-lo com mais alguma coisa?",
-				"wed-like-to-hire-you": "Gostaríamos de contrata-lo",
+				"wed-like-to-hire-you": "Gostaríamos de contratá-lo",
 				"thats-awesome": "Isso é incrível!",
 				"send me a message-and-lets-chat-further": "Me envie uma mensagem e vamos continuar essa conversa!",
-				"you-can-call-me-at": "Você pode entrar em contato comigo via {{mail}}",
-				"im-sending-you-to-your-mail": "Estou te enviando para seu email",
+				"you-can-call-me-at": "Você pode entrar em contato comigo via {{email}}",
+				"im-sending-you-to-your-email": "Estou te redirecionando para o seu e-mail",
 				"ok-here-you-go": "Ok, aqui está"
 			}
 		},
@@ -37,7 +37,7 @@
 			"internship-student": "Estágio",
 			"lacuna-software-experience": "Desenvolvendo uma aplicação para autoridades de registro. Participando de todas as etapas do desenvolvimento, incluindo modelagem de banco de dados, backend e frontend. Trabalhando em todas as funcionalidades do software como videoconferência, coleta biométrica, emissão de certificados digitais e assinatura digital. Desenvolvendo testes unitários, testes de integração e testes E2E (criando os padrões aderidos pela empresa). Manutenção de aplicações existentes, com melhorias de código, desenvolvimento de novas funcionalidades e correção de bugs. Desenvolvimento de aplicações multi tenant.",
 			"tribunal-de-contas-da-uniao-experience": "Dando manutenção e desenvolvendo novos aplicativos para uso interno.",
-			"companhia-da-terra-experience": "Desenvolvendo uma aplicação para um pet shot."
+			"companhia-da-terra-experience": "Desenvolvendo uma aplicação para um pet shop."
 		}
 	}
 }

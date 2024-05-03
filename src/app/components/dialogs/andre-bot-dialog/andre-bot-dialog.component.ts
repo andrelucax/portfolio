@@ -108,7 +108,7 @@ export class AndreBotDialogComponent implements OnInit {
 			{
 				translationKey: "components.dialogs.andre-bot-dialog.you-can-call-me-at",
 				answer: true,
-				translationArguments: { mail: "andrelucax@gmail.com" },
+				translationArguments: { email: "andrelucax@gmail.com" },
 			},
 		];
 
@@ -126,7 +126,7 @@ export class AndreBotDialogComponent implements OnInit {
 
 		let answers: Message[] = [
 			{
-				translationKey: "components.dialogs.andre-bot-dialog.im-sending-you-to-your-mail",
+				translationKey: "components.dialogs.andre-bot-dialog.im-sending-you-to-your-email",
 				answer: true,
 			},
 			{

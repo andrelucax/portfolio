@@ -18,8 +18,8 @@
 				"wed-like-to-hire-you": "We'd like to hire you",
 				"thats-awesome": "That's awesome!",
 				"send me a message-and-lets-chat-further": "Send me a message and let's chat further!",
-				"you-can-call-me-at": "You can call me at {{mail}}",
-				"im-sending-you-to-your-mail": "I'm sending you to your mail",
+				"you-can-call-me-at": "You can email me at {{email}}",
+				"im-sending-you-to-your-email": "I'm redirecting you to your email",
 				"ok-here-you-go": "Ok, here you go"
 			}
 		},
