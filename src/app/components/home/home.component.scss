@@ -1,3 +1,56 @@
-.scroll {
-	height: 200vh;
+.role-text {
+	font-size: 96px;
+	word-spacing: 100vw;
+
+	@media (max-width: 1200px) {
+		font-size: 76px;
+	}
+
+	@media (max-width: 1000px) {
+		font-size: 56px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 26px;
+		word-spacing: inherit;
+		text-align: center;
+	}
+}
+
+.desc-text {
+	font-size: 36px;
+
+	@media (max-width: 1200px) {
+		font-size: 30px;
+	}
+
+	@media (max-width: 1000px) {
+		font-size: 25px;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 20px;
+	}
+}
+
+.photo {
+	border: 5px solid white;
+	width: 400px;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		border-width: 2px;
+	}
+}
+
+.additional-box {
+	border: 5px solid white;
+	width: 400px;
+	height: 400px;
+	margin-top: -300px;
+	margin-left: 100px;
+
+	@media (max-width: 1300px) {
+		display: none;
+	}
 }
