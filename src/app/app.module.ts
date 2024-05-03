@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatMenuModule } from '@angular/material/menu';
+import { SvgIconStartupService } from './services/svg-icon-startup.service';
+import { TranslateStartupService } from './services/translate-startup.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -46,7 +48,19 @@ export function HttpLoaderFactory(http: HttpClient) {
 		}),
 	],
 	providers: [
-		provideAnimationsAsync()
+		provideAnimationsAsync(),
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (s: SvgIconStartupService) => () => s.init(),
+			deps: [SvgIconStartupService],
+			multi: true,
+		},
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (s: TranslateStartupService) => () => s.init(),
+			deps: [TranslateStartupService],
+			multi: true,
+		},
 	],
 	bootstrap: [AppComponent]
 })
