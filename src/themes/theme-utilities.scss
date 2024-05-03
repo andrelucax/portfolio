@@ -25,6 +25,12 @@
 		}
 	}
 
+	@each $border, $color in $theme-palette {
+		.border-#{""+$border} {
+			border-color: $color !important;
+		}
+	}
+
 	.experience-card:hover {
 		.experience {
 			h2 {

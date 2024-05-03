@@ -1,3 +1,4 @@
+<!-- TODO i18n -->
 <div class="chat">
 	<mat-toolbar color="primary" class="p-0">
 		<img class="photo m-3" src="/assets/img/andrelucax.jpg">
@@ -6,7 +7,7 @@
 			<span>Ask me a question</span>
 		</div>
 	</mat-toolbar>
-	<div class="content p-2 d-flex flex-column">
+	<div #content class="content p-2 d-flex flex-column">
 		@for (m of messages; track $index) {
 			@if (m.answer) {
 				<ng-container *ngTemplateOutlet="answerMessage; context: {
@@ -19,6 +20,24 @@
 				}"></ng-container>
 			}
 		}
+		@if (!isAnswering) {
+			@if (optionType == OptionsTypes.Default) {
+				<ng-container *ngTemplateOutlet="questionOption; context: {
+					type: QuestionOptionTypes.Hello
+				}"></ng-container>
+				<ng-container *ngTemplateOutlet="questionOption; context: {
+					type: QuestionOptionTypes.Hire
+				}"></ng-container>
+			}
+			@if (optionType == OptionsTypes.Contact) {
+				<ng-container *ngTemplateOutlet="questionOption; context: {
+					type: QuestionOptionTypes.Message
+				}"></ng-container>
+				<ng-container *ngTemplateOutlet="questionOption; context: {
+					type: QuestionOptionTypes.Options
+				}"></ng-container>
+			}
+		}
 	</div>
 </div>
 
@@ -28,4 +47,12 @@
 
 <ng-template #questionMessage let-message="message">
 	<span class="p-3 message question-message bg-primary-dark text-white">{{message}}</span>
+</ng-template>
+
+<ng-template #questionOption let-type="type">
+	<!-- TODO code reuse -->
+	<span *ngIf="type == QuestionOptionTypes.Hello" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="hello()">Just saying hello!</span>
+	<span *ngIf="type == QuestionOptionTypes.Hire" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="hire()">We'd like to hire you</span>
+	<span *ngIf="type == QuestionOptionTypes.Message" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="message()">Send a message</span>
+	<span *ngIf="type == QuestionOptionTypes.Options" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="options()">See other options</span>
 </ng-template>
