@@ -1,17 +1,17 @@
 .role-text {
-	font-size: 96px;
+	font-size: 73px;
 	word-spacing: 100vw;
 
 	@media (max-width: 1200px) {
-		font-size: 76px;
+		font-size: 53px;
 	}
 
 	@media (max-width: 1000px) {
-		font-size: 56px;
+		font-size: 33px;
 	}
 
 	@media (max-width: 767px) {
-		font-size: 26px;
+		font-size: 23px;
 		word-spacing: inherit;
 		text-align: center;
 	}

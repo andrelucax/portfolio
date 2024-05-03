@@ -19,8 +19,8 @@
 			technologies: ['Oracle APEX'],
 		}"></ng-container>
 		<ng-container *ngTemplateOutlet="experienceCard; context: {
-			periodStart: '09/2021',
-			periodEnd: 'Present',
+			periodStart: '09/2020',
+			periodEnd: '02/2021',
 			companyUrl: 'https://www.companhiadaterra.com/',
 			role: 'Internship Student',
 			companyName: 'Companhia da Terra',
@@ -73,7 +73,7 @@
 >
 	<div class="d-flex experience-card p-2" (click)="goToCompany(companyUrl)">
 		<div class="me-3">
-			<span class="experience-period">{{periodStart}} — {{periodEnd}}</span>
+			<span class="experience-period">{{periodStart}} — <span [ngClass]="{'text-primary': periodEnd == 'Present'}">{{periodEnd}}</span></span>
 		</div>
 		<div class="experience">
 			<h2>{{role}} · <span class="experience-company">{{companyName}}<mat-icon
