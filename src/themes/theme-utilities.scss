@@ -22,4 +22,14 @@
 			background-color: $color !important;
 		}
 	}
+
+	.experience-card:hover {
+		.experience {
+			h2 {
+				.experience-company{
+					color: mat.get-color-from-palette(map.get($color-config, 'primary'), 500);
+				}
+			}
+		}
+	}
 }

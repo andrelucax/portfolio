@@ -18,10 +18,11 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SvgIconStartupService } from './services/svg-icon-startup.service';
 import { TranslateStartupService } from './services/translate-startup.service';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+	return new TranslateHttpLoader(http);
 }
 
 @NgModule({
@@ -30,7 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		LayoutComponent,
 		HeaderComponent,
 		HomeComponent,
-  ExperienceComponent,
+		ExperienceComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -41,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		MatIconModule,
 		HttpClientModule,
 		MatMenuModule,
+		MatChipsModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,

@@ -50,4 +50,8 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 		removeEventListener("resize", this.calcAnchor);
 		document.getElementById("sideNavContent")!.removeEventListener('scroll', this.calcAnchor);
 	}
+
+	goToCompany(link: string) {
+		window.open(link, '_blank');
+	}
 }
