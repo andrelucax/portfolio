@@ -1,8 +1,3 @@
-<mat-toolbar class="header position-fixed" color="primary">
-	<app-header [animateLogo]="animateLogo" [isDark]="isDark" (onToogleTheme)="toogleTheme()"
-		(onToogleMenu)="toogleMenu()" (onChangeLang)="changeLang($event)" (onContactMe)="contactMe()" [isBotDialogOpen]="isBotDialogOpen" class="w-100">
-</app-header>
-</mat-toolbar>
 <mat-sidenav-container class="sidenav-container" [class.light-theme]="!isDark">
 	<mat-sidenav #sideNav>
 		<div class="content p-2 side-nav-content">
@@ -32,6 +27,11 @@
 		</div>
 	</mat-sidenav>
 	<mat-sidenav-content #sideNavContent id="sidenav-content">
+		<mat-toolbar class="header position-fixed" color="primary">
+			<app-header [animateLogo]="animateLogo" [isDark]="isDark" (onToogleTheme)="toogleTheme()"
+				(onToogleMenu)="toogleMenu()" (onChangeLang)="changeLang($event)" (onContactMe)="contactMe()" [isBotDialogOpen]="isBotDialogOpen" class="w-100">
+			</app-header>
+		</mat-toolbar>
 		<div class="content">
 			<router-outlet></router-outlet>
 		</div>
