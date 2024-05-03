@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-header',
@@ -16,7 +17,21 @@ export class HeaderComponent {
 	@Input("animateLogo")
 	animateLogo: boolean;
 
+	get currentLang() {
+		return this.translate.currentLang;
+	}
+
+	constructor(
+		private translate: TranslateService,
+	) {
+
+	}
+
 	toogleTheme() {
 		this.onToogleTheme.emit();
+	}
+
+	changeLangue(lang: string) {
+		this.translate.use(lang);
 	}
 }

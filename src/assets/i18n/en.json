@@ -1,0 +1,11 @@
+{
+	"components": {
+		"home": {
+			"fullstack-developer": "Fullstack Developer.",
+			"hello-i-am": "Hi, my name is André Pinto and I'm a creative and independent developer from Brazil."
+		},
+		"header": {
+			"portfolio": "Portfolio André Pinto"
+		}
+	}
+}

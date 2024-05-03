@@ -6,11 +6,18 @@
 			<path d="M460 320H500V375L440 540H500V595H425L390 680H325L460 320Z" fill="white"/>
 			<path d="M500 320H565V625H675V680H500V320Z" fill="white"/>
 		</svg>
-		<span class="d-none d-md-block">Portfolio André Pinto</span>
+		<span class="d-none d-md-block">{{"components.header.portfolio" | translate}}</span>
 	</div>
-	<div>
+	<div class="d-flex">
 		<button class="me-2" mat-icon-button (click)="toogleTheme()">
 			<mat-icon>{{isDark ? 'dark_mode' : 'light_mode'}}</mat-icon>
 		</button>
+		<button class="me-2" mat-flat-button [matMenuTriggerFor]="langMenu">
+			{{currentLang}}
+		</button>
+		<mat-menu #langMenu="matMenu">
+			<span (click)="changeLangue('en')"mat-menu-item>en</span>
+			<span (click)="changeLangue('pt')"mat-menu-item>pt</span>
+		  </mat-menu>
 	</div>
 </div>
