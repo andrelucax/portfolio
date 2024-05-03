@@ -50,9 +50,8 @@
 </ng-template>
 
 <ng-template #questionOption let-type="type">
-	<!-- TODO code reuse -->
-	<span *ngIf="type == QuestionOptionTypes.Hello" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="hello()">Just saying hello!</span>
-	<span *ngIf="type == QuestionOptionTypes.Hire" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="hire()">We'd like to hire you</span>
-	<span *ngIf="type == QuestionOptionTypes.Message" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="message()">Send a message</span>
-	<span *ngIf="type == QuestionOptionTypes.Options" class="p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center" (click)="options()">See other options</span>
+	<span *ngIf="type == QuestionOptionTypes.Hello" [class]="questionOptionClasses" (click)="hello()">Just saying hello!</span>
+	<span *ngIf="type == QuestionOptionTypes.Hire" [class]="questionOptionClasses" (click)="hire()">We'd like to hire you</span>
+	<span *ngIf="type == QuestionOptionTypes.Message" [class]="questionOptionClasses" (click)="sendMessage()">Send a message</span>
+	<span *ngIf="type == QuestionOptionTypes.Options" [class]="questionOptionClasses" (click)="showOptions()">See other options</span>
 </ng-template>

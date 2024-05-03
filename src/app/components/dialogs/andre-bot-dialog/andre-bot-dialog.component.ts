@@ -32,9 +32,29 @@ export class AndreBotDialogComponent {
 		},
 	];
 
-	// TODO code reuse
-	hello() {
+	readonly questionOptionClasses: string = "p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center";
+
+	sendAnswer(answers: Message[], optionType: OptionsTypes = OptionsTypes.Default) {
 		this.isAnswering = true;
+		for (let i = 0; i < answers.length; ++i) {
+			setTimeout(() => {
+				this.messages.push(answers[i]);
+				setTimeout(() => {
+					this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
+				});
+			}, 1000 * (i + 1));
+		}
+
+		setTimeout(() => {
+			this.isAnswering = false;
+			this.optionType = optionType;
+			setTimeout(() => {
+				this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
+			});
+		}, 1000 * answers.length);
+	}
+
+	hello() {
 		this.messages.push(
 			{
 				message: 'Just saying hello!',
@@ -42,7 +62,7 @@ export class AndreBotDialogComponent {
 			}
 		);
 
-		let messagesToAdd: Message[] = [
+		let answers: Message[] = [
 			{
 				message: "Hi!",
 				answer: true,
@@ -61,25 +81,10 @@ export class AndreBotDialogComponent {
 			},
 		];
 
-		for (let i = 0; i < messagesToAdd.length; ++i) {
-			setTimeout(() => {
-				this.messages.push(messagesToAdd[i]);
-				setTimeout(() => {
-					this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
-				});
-			}, 1000 * (i + 1));
-		}
-
-		setTimeout(() => {
-			this.isAnswering = false;
-			setTimeout(() => {
-				this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
-			});
-		}, 1000 * messagesToAdd.length);
+		this.sendAnswer(answers);
 	}
 
 	hire() {
-		this.isAnswering = true;
 		this.messages.push(
 			{
 				message: "We'd like to hire you",
@@ -87,7 +92,7 @@ export class AndreBotDialogComponent {
 			}
 		);
 
-		let messagesToAdd: Message[] = [
+		let answers: Message[] = [
 			{
 				message: "That's awesome!",
 				answer: true,
@@ -102,25 +107,10 @@ export class AndreBotDialogComponent {
 			},
 		];
 
-		for (let i = 0; i < messagesToAdd.length; ++i) {
-			setTimeout(() => {
-				this.messages.push(messagesToAdd[i]);
-				setTimeout(() => {
-					this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
-				});
-			}, 1000 * (i + 1));
-		}
-
-		setTimeout(() => {
-			this.optionType = OptionsTypes.Contact;
-			this.isAnswering = false;
-			setTimeout(() => {
-				this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
-			});
-		}, 1000 * messagesToAdd.length);
+		this.sendAnswer(answers, OptionsTypes.Contact);
 	}
 
-	message() {
+	sendMessage() {
 		this.isAnswering = true;
 		this.messages.push(
 			{
@@ -129,7 +119,7 @@ export class AndreBotDialogComponent {
 			}
 		);
 
-		let messagesToAdd: Message[] = [
+		let answers: Message[] = [
 			{
 				message: "I'm sending you to your mail",
 				answer: true,
@@ -140,26 +130,11 @@ export class AndreBotDialogComponent {
 			},
 		];
 
+		this.sendAnswer(answers);
 		window.open('mailto:andrelucax@gmail.com?subject=Work%20enquiry');
-		for (let i = 0; i < messagesToAdd.length; ++i) {
-			setTimeout(() => {
-				this.messages.push(messagesToAdd[i]);
-				setTimeout(() => {
-					this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
-				});
-			}, 1000 * (i + 1));
-		}
-
-		setTimeout(() => {
-			this.optionType = OptionsTypes.Default;
-			this.isAnswering = false;
-			setTimeout(() => {
-				this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
-			});
-		}, 1000 * messagesToAdd.length);
 	}
 
-	options() {
+	showOptions() {
 		this.isAnswering = true;
 		this.messages.push(
 			{
