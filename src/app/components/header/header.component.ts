@@ -20,6 +20,8 @@ export class HeaderComponent {
 	@Input("animateLogo")
 	animateLogo: boolean;
 
+	isBotDialogOpen: boolean;
+
 	get currentLang() {
 		return this.translate.currentLang;
 	}
@@ -41,6 +43,7 @@ export class HeaderComponent {
 	}
 
 	contactMe() {
+		this.isBotDialogOpen = true;
 		this.dialog.open(AndreBotDialogComponent, {
 			position: {
 				right: '40px',
@@ -49,6 +52,6 @@ export class HeaderComponent {
 			panelClass: 'andrep-bot-dialog-pannel',
 			scrollStrategy: this.overlay.scrollStrategies.noop(),
 			hasBackdrop: false,
-		});
+		}).afterClosed().subscribe(_ => this.isBotDialogOpen = false);
 	}
 }

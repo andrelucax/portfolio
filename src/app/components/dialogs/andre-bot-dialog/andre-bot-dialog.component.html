@@ -6,6 +6,9 @@
 			<h5 class="mb-0">André Bot</h5>
 			<span>Ask me a question</span>
 		</div>
+		<mat-button class="close-button me-3" mat-button-icon mat-dialog-close>
+			<mat-icon>close</mat-icon>
+		</mat-button>
 	</mat-toolbar>
 	<div #content class="content p-2 d-flex flex-column">
 		@for (m of messages; track $index) {
