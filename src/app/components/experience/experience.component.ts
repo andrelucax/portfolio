@@ -10,11 +10,18 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 	anchorX: number;
 	anchorY: number;
 
-	eyeAnimation = (e: any) => {
-		const mouseX = e.clientX;
-		const mouseY = e.clientY;
+	lastCalculedMouseX: number;
+	lastCalculedMouseY: number;
 
-		const angleDeg = this.angle(mouseX, mouseY, this.anchorX, this.anchorY);
+	eyeAnimation = (e?: any) => {
+		if (e) {
+			const mouseX = e.clientX;
+			this.lastCalculedMouseX = mouseX;
+			const mouseY = e.clientY;
+			this.lastCalculedMouseY = mouseY;
+		}
+
+		const angleDeg = this.angle(this.lastCalculedMouseX, this.lastCalculedMouseY, this.anchorX, this.anchorY);
 
 		const eyes = document.querySelectorAll('.eye');
 		eyes.forEach((eye: any) => {
@@ -27,6 +34,8 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 		const rekt = anchor!.getBoundingClientRect();
 		this.anchorX = rekt.left + rekt.width/2;
 		this.anchorY = rekt.top + rekt.height/2;
+
+		this.eyeAnimation();
 	}
 
 	angle(cx: any, cy: any, ex: any, ey: any) {
