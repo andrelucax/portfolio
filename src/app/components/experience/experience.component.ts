@@ -49,7 +49,7 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 	ngAfterViewInit(): void {
 		addEventListener('mousemove', this.eyeAnimation);
 		addEventListener("resize", this.calcAnchor);
-		addEventListener('scroll', this.calcAnchor);
+		document.getElementById('sidenav-content')!.addEventListener('scroll', this.calcAnchor);
 
 		this.calcAnchor();
 	}
@@ -57,7 +57,7 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 	ngOnDestroy(): void {
 		removeEventListener('mousemove', this.eyeAnimation);
 		removeEventListener("resize", this.calcAnchor);
-		removeEventListener('scroll', this.calcAnchor);
+		document.getElementById('sidenav-content')!.removeEventListener('scroll', this.calcAnchor);
 	}
 
 	goToCompany(link: string) {

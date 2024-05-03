@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container" [class.light-theme]="!isDark">
-	<mat-sidenav-content #sideNavContent>
+	<mat-sidenav-content #sideNavContent id="sidenav-content">
 		<mat-toolbar class="header position-fixed" color="primary">
 			<app-header [animateLogo]="animateLogo" [isDark]="isDark" (onToogleTheme)="toogleTheme()" class="w-100"></app-header>
 		</mat-toolbar>
