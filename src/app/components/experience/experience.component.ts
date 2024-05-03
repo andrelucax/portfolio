@@ -63,4 +63,8 @@ export class ExperienceComponent implements AfterViewInit, OnDestroy {
 	goToCompany(link: string) {
 		window.open(link, '_blank');
 	}
+
+	goToFullResume() {
+		window.open("assets/resume.pdf", '_blank');
+	}
 }

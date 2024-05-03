@@ -34,7 +34,7 @@
 	.experience-card:hover {
 		.experience {
 			h2 {
-				.experience-company{
+				.experience-link{
 					color: mat.get-color-from-palette(map.get($color-config, 'primary'), 500);
 				}
 			}

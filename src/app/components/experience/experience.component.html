@@ -28,6 +28,11 @@
 			companyExperience: 'components.experience.companhia-da-terra-experience' | translate,
 			technologies: ['Django', 'React Native'],
 		}"></ng-container>
+		<div class="d-flex experience-card p-2 view-full-resume" (click)="goToFullResume()">
+			<div class="experience">
+				<h2><span class="experience-link">{{'components.experience.view-full-resume' | translate}}<mat-icon class="ms-2 link-icon">call_made</mat-icon></span></h2>
+			</div>
+		</div>
 	</div>
 	<div class="col-lg-6 d-lg-block d-none">
 		<div class="d-flex align-items-center justify-content-center">
@@ -82,7 +87,7 @@
 			</span>
 		</div>
 		<div class="experience">
-			<h2>{{role}} · <span class="experience-company">{{companyName}}<mat-icon
+			<h2>{{role}} · <span class="experience-link">{{companyName}}<mat-icon
 						class="ms-2 link-icon">call_made</mat-icon></span></h2>
 			<span>{{companyExperience}}</span>
 			<mat-chip-set>
