@@ -25,8 +25,6 @@ export class AndreBotDialogComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		console.log(this.translateService.currentLang);
-
 		this.messages.push(
 			{
 				translationKey: "components.dialogs.andre-bot-dialog.hello",
