@@ -9,13 +9,13 @@
 			<div class="button-container d-flex">
 				<button class="w-100" mat-raised-button color="primary" (click)="toogleTheme()">
 					<mat-icon>{{isDark ? 'dark_mode' : 'light_mode'}}</mat-icon>
-					Alterar Tema
+					{{'components.layout.change-theme'}}
 				</button>
 			</div>
 			<div class="button-container d-flex mt-2">
 				<button class="w-100" mat-raised-button color="primary" [matMenuTriggerFor]="langMenu" *ngIf="supportedLangs && supportedLangs.length > 1">
 					<mat-icon>translate</mat-icon>
-					Alterar idioma
+					{{'components.layout.change-language'}}
 				</button>
 			</div>
 			<mat-menu #langMenu="matMenu">
@@ -26,7 +26,7 @@
 			<div class="button-container d-flex mt-2">
 				<button [disabled]="isBotDialogOpen"class="w-100" mat-raised-button color="primary" (click)="contactMe()">
 					<mat-icon>contact_mail</mat-icon>
-					Contato
+					{{'common.contact' | translate}}
 				</button>
 			</div>
 		</div>
