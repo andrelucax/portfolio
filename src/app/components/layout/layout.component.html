@@ -1,39 +1,41 @@
-<mat-sidenav-container class="sidenav-container" [class.light-theme]="!isDark">
-	<mat-sidenav #sideNav>
-		<div class="content p-2 side-nav-content">
-			<div class="button-container d-flex">
-				<button class="w-100" mat-raised-button color="primary" (click)="toogleTheme()">
-					<mat-icon>{{isDark ? 'dark_mode' : 'light_mode'}}</mat-icon>
-					{{'components.layout.change-theme' | translate}}
-				</button>
+<div [class.light-theme]="!isDark">
+	<mat-toolbar class="header position-fixed" color="primary">
+		<app-header [animateLogo]="animateLogo" [isDark]="isDark" (onToogleTheme)="toogleTheme()"
+			(onToogleMenu)="toogleMenu()" (onChangeLang)="changeLang($event)" (onContactMe)="contactMe()" [isBotDialogOpen]="isBotDialogOpen" class="w-100">
+		</app-header>
+	</mat-toolbar>
+	<mat-sidenav-container class="sidenav-container">
+		<mat-sidenav #sideNav>
+			<div class="content p-2 side-nav-content">
+				<div class="button-container d-flex">
+					<button class="w-100" mat-raised-button color="primary" (click)="toogleTheme()">
+						<mat-icon>{{isDark ? 'dark_mode' : 'light_mode'}}</mat-icon>
+						{{'components.layout.change-theme' | translate}}
+					</button>
+				</div>
+				<div class="button-container d-flex mt-2">
+					<button class="w-100" mat-raised-button color="primary" [matMenuTriggerFor]="langMenu" *ngIf="supportedLangs && supportedLangs.length > 1">
+						<mat-icon>translate</mat-icon>
+						{{'components.layout.change-language' | translate}}
+					</button>
+				</div>
+				<mat-menu #langMenu="matMenu">
+					@for (lang of supportedLangs; track $index) {
+						<span (click)="changeLang(lang)" mat-menu-item>{{lang}}</span>
+					}
+				</mat-menu>
+				<div class="button-container d-flex mt-2">
+					<button [disabled]="isBotDialogOpen"class="w-100" mat-raised-button color="primary" (click)="contactMe()">
+						<mat-icon>contact_mail</mat-icon>
+						{{'common.contact' | translate}}
+					</button>
+				</div>
 			</div>
-			<div class="button-container d-flex mt-2">
-				<button class="w-100" mat-raised-button color="primary" [matMenuTriggerFor]="langMenu" *ngIf="supportedLangs && supportedLangs.length > 1">
-					<mat-icon>translate</mat-icon>
-					{{'components.layout.change-language' | translate}}
-				</button>
+		</mat-sidenav>
+		<mat-sidenav-content #sideNavContent id="sidenav-content">
+			<div class="content">
+				<router-outlet></router-outlet>
 			</div>
-			<mat-menu #langMenu="matMenu">
-				@for (lang of supportedLangs; track $index) {
-					<span (click)="changeLang(lang)" mat-menu-item>{{lang}}</span>
-				}
-			</mat-menu>
-			<div class="button-container d-flex mt-2">
-				<button [disabled]="isBotDialogOpen"class="w-100" mat-raised-button color="primary" (click)="contactMe()">
-					<mat-icon>contact_mail</mat-icon>
-					{{'common.contact' | translate}}
-				</button>
-			</div>
-		</div>
-	</mat-sidenav>
-	<mat-sidenav-content #sideNavContent id="sidenav-content">
-		<mat-toolbar class="header position-fixed" color="primary">
-			<app-header [animateLogo]="animateLogo" [isDark]="isDark" (onToogleTheme)="toogleTheme()"
-				(onToogleMenu)="toogleMenu()" (onChangeLang)="changeLang($event)" (onContactMe)="contactMe()" [isBotDialogOpen]="isBotDialogOpen" class="w-100">
-			</app-header>
-		</mat-toolbar>
-		<div class="content">
-			<router-outlet></router-outlet>
-		</div>
-	</mat-sidenav-content>
-</mat-sidenav-container>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>
