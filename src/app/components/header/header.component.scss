@@ -1,4 +1,44 @@
-.andl-logo {
+.logo {
 	height: 64px;
 	width: 64px;
+}
+
+.logo-light-shield-animation {
+	animation: logoLightShieldAnimation 0.5s ease-out forwards;
+}
+
+.logo-dark-shield-animation {
+	animation: logoDarkShieldAnimation 0.5s ease-out forwards;
+}
+
+@keyframes logoLightShieldAnimation {
+	25% {
+		transform: translate3D(-100px, 0, 0);
+	}
+
+	50% {
+		transform: translate3D(-100px, 0, 0);
+	}
+
+	75% {
+		transform: translate3D(0, 0, 0);
+	}
+}
+
+@keyframes logoDarkShieldAnimation {
+	25% {
+		transform: translate3D(0px, 0, 0);
+	}
+
+	50% {
+		transform: translate3D(100px, 0, 0);
+	}
+
+	75% {
+		transform: translate3D(100px, 0, 0);
+	}
+
+	100% {
+		transform: translate3D(0, 0, 0);
+	}
 }
