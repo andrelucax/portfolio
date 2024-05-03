@@ -13,32 +13,32 @@
 
 @keyframes logoLightShieldAnimation {
 	25% {
-		transform: translate3D(-10%, 0, 0);
+		transform: translateX(-10%);
 	}
 
 	50% {
-		transform: translate3D(-10%, 0, 0);
+		transform: translateX(-10%);
 	}
 
 	75% {
-		transform: translate3D(0, 0, 0);
+		transform: translateX(0);
 	}
 }
 
 @keyframes logoDarkShieldAnimation {
 	25% {
-		transform: translate3D(0, 0, 0);
+		transform: translateX(0);
 	}
 
 	50% {
-		transform: translate3D(10%, 0, 0);
+		transform: translateX(10%);
 	}
 
 	75% {
-		transform: translate3D(10%, 0, 0);
+		transform: translateX(10%);
 	}
 
 	100% {
-		transform: translate3D(0, 0, 0);
+		transform: translateX(0);
 	}
 }
