@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { AndreBotDialogComponent } from '../dialogs/andre-bot-dialog/andre-bot-dialog.component';
 import { Overlay } from '@angular/cdk/overlay';
+import { Constants } from '../../classes/constants';
 
 @Component({
 	selector: 'app-header',
@@ -22,6 +23,10 @@ export class HeaderComponent {
 
 	isBotDialogOpen: boolean;
 
+	get supportedLangs() {
+		return this.translate.langs;
+	}
+
 	get currentLang() {
 		return this.translate.currentLang;
 	}
@@ -30,9 +35,7 @@ export class HeaderComponent {
 		private translate: TranslateService,
 		private dialog: MatDialog,
 		private overlay: Overlay,
-	) {
-
-	}
+	) { }
 
 	toogleTheme() {
 		this.onToogleTheme.emit();
@@ -40,6 +43,7 @@ export class HeaderComponent {
 
 	changeLangue(lang: string) {
 		this.translate.use(lang);
+		sessionStorage.setItem(Constants.preferredLangSessionStorageKey, lang);
 	}
 
 	contactMe() {
