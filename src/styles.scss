@@ -32,6 +32,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	}
 }
 
-.dialog-background-transparent {
+.andrep-bot-dialog-pannel {
 	--mdc-dialog-container-color: transparent;
+	margin-top: 40px;
+	margin-left: 40px;
+}
+
+.andrep-bot-dialog-pannel:after {
+	content: ' ';
+	position: absolute;
+	width: 350px;
+	height: 600px;
+	box-shadow: 0 0 40px white;
 }

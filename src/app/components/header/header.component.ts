@@ -46,8 +46,9 @@ export class HeaderComponent {
 				right: '40px',
 				bottom: '40px',
 			},
-			panelClass: 'dialog-background-transparent',
+			panelClass: 'andrep-bot-dialog-pannel',
 			scrollStrategy: this.overlay.scrollStrategies.noop(),
+			hasBackdrop: false,
 		});
 	}
 }

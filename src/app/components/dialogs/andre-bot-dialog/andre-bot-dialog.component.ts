@@ -32,7 +32,7 @@ export class AndreBotDialogComponent {
 		},
 	];
 
-	readonly questionOptionClasses: string = "p-3 border-primary message question-option text-primary w-100 d-flex justify-content-center";
+	readonly questionOptionClasses: string = "p-3 border-primary bg-primary-contrast message question-option text-primary w-100 d-flex justify-content-center";
 
 	sendAnswer(answers: Message[], optionType: OptionsTypes = OptionsTypes.Default) {
 		this.isAnswering = true;
