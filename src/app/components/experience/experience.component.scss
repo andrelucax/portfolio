@@ -10,29 +10,48 @@
 	left: 40px;
 }
 
-.experience-period {
-	white-space: nowrap;
-}
-
 .experience-card {
-	cursor: pointer;
-	border: 1px solid;
-	border-radius: 5px;
-	border-color: transparent;
+	@media (min-width: 992px) {
+		cursor: pointer;
+		border: 1px solid;
+		border-radius: 5px;
+		border-color: transparent;
+
+		&:hover {
+			border: 1px solid;
+			border-radius: 5px;
+			border-color: inherit;
+			background-color: rgba(0, 0, 0, 0.2);
+
+			.link-icon {
+				animation: linkIconAnimation 0.1s ease-out forwards;
+			}
+		}
+	}
+
+	@media (max-width: 991px) {
+		.experience-link {
+			cursor: pointer;
+
+			&:hover {
+				border: 1px solid;
+				border-radius: 5px;
+				border-color: inherit;
+				background-color: rgba(0, 0, 0, 0.2);
+
+				.link-icon {
+					animation: linkIconAnimation 0.1s ease-out forwards;
+				}
+			}
+		}
+	}
+
+	.experience-period {
+		white-space: nowrap;
+	}
 
 	@media (max-width: 500px) {
 		flex-wrap: wrap;
-	}
-}
-
-.experience-card:hover {
-	border: 1px solid;
-	border-radius: 5px;
-	border-color: inherit;
-	background-color: rgba(0, 0, 0, 0.2);
-
-	.link-icon {
-		animation: linkIconAnimation 0.1s ease-out forwards;
 	}
 }
 

@@ -28,8 +28,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .experience-card {
-	.mat-mdc-chip-action {
-		cursor: pointer !important;
+	@media (min-width: 992px) {
+		.mat-mdc-chip-action {
+			cursor: pointer !important;
+		}
 	}
 }
 

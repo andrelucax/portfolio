@@ -31,10 +31,16 @@
 		}
 	}
 
-	.experience-card:hover {
-		.experience {
-			h2 {
-				.experience-link{
+	.experience-card {
+		@media (max-width: 991px) {
+			.experience-link {
+				color: mat.get-color-from-palette(map.get($color-config, 'primary'), 500);
+			}
+		}
+
+		@media (min-width: 992px) {
+			&:hover {
+				.experience-link {
 					color: mat.get-color-from-palette(map.get($color-config, 'primary'), 500);
 				}
 			}
