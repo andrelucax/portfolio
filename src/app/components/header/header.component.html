@@ -18,6 +18,7 @@
 		<mat-menu #langMenu="matMenu">
 			<span (click)="changeLangue('en')"mat-menu-item>en</span>
 			<span (click)="changeLangue('pt')"mat-menu-item>pt</span>
-		  </mat-menu>
+		</mat-menu>
+		<button class="me-e" mat-raised-button (click)="contactMe()" color="accent">{{'components.header.contact-me' | translate}}</button>
 	</div>
 </div>

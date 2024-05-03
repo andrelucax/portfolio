@@ -34,4 +34,8 @@ export class HeaderComponent {
 	changeLangue(lang: string) {
 		this.translate.use(lang);
 	}
+
+	contactMe() {
+
+	}
 }

@@ -19,6 +19,7 @@ import { SvgIconStartupService } from './services/svg-icon-startup.service';
 import { TranslateStartupService } from './services/translate-startup.service';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { ConsoleGreetingsService } from './services/console-greetings.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -63,6 +64,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 			provide: APP_INITIALIZER,
 			useFactory: (s: TranslateStartupService) => () => s.init(),
 			deps: [TranslateStartupService],
+			multi: true,
+		},
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (s: ConsoleGreetingsService) => () => s.init(),
+			deps: [ConsoleGreetingsService],
 			multi: true,
 		},
 	],
