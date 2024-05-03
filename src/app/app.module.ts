@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatMenuModule } from '@angular/material/menu';
@@ -76,6 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 			deps: [ConsoleGreetingsService],
 			multi: true,
 		},
+		TranslatePipe,
 	],
 	bootstrap: [AppComponent]
 })

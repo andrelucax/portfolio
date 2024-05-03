@@ -1,5 +1,28 @@
 {
 	"components": {
+		"dialogs": {
+			"andre-bot-dialog": {
+				"andre-bot": "André Bot",
+				"ask-me-a-question": "Ask me a question",
+				"just-saying-hello": "Just saying hello!",
+				"we-like-to-hire-you": "We'd like to hire you",
+				"send-a-message": "Send a message",
+				"see-other-options": "See other options",
+				"hello": "Hello!",
+				"im-andre-bot": "I'm André Bot. I'm here to help you.",
+				"how-can-i-help": "How can I help?",
+				"hi": "Hi!",
+				"thanks-for-passing-by": "Thanks for passing by",
+				"hope-youre-having-fun": "Hope you're having fun 😉",
+				"can-i-do-anything-else-for-you": "Can I do anything else for you?",
+				"wed-like-to-hire-you": "We'd like to hire you",
+				"thats-awesome": "That's awesome!",
+				"send me a message-and-lets-chat-further": "Send me a message and let's chat further!",
+				"you-can-call-me-at": "You can call me at {{mail}}",
+				"im-sending-you-to-your-mail": "I'm sending you to your mail",
+				"ok-here-you-go": "Ok, here you go"
+			}
+		},
 		"home": {
 			"fullstack-developer": "Fullstack Developer.",
 			"hello-i-am": "Hi, my name is André Pinto and I'm a creative and independent software developer from Brazil."

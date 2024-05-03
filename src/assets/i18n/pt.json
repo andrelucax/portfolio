@@ -1,4 +1,27 @@
 {
+	"dialogs": {
+		"andre-bot-dialog": {
+			"andre-bot": "Bot André",
+			"ask-me-a-question": "Pergunte-me alguma coisa",
+			"just-saying-hello": "Apenas dizendo oi!",
+			"we-like-to-hire-you": "Gostariamos de contratar você",
+			"send-a-message": "Enviar uma mensagem",
+			"see-other-options": "Ver outras opções",
+			"hello": "Olá!",
+			"im-andre-bot": "Eu sou o Bot André. Estou aqui para ajudá-lo.",
+			"how-can-i-help": "Como posso ajud-alo?",
+			"hi": "Oi!",
+			"thanks-for-passing-by": "Obrigado por passar por aqui",
+			"hope-youre-having-fun": "Espero que esteja se divertindo 😉",
+			"can-i-do-anything-else-for-you": "Posso ajudá-lo com mais alguma coisa?",
+			"wed-like-to-hire-you": "Gostaríamos de contrata-lo",
+			"thats-awesome": "Isso é incrível!",
+			"send me a message-and-lets-chat-further": "Me envie uma mensagem e vamos continuar essa conversa!",
+			"you-can-call-me-at": "Você pode entrar em contato comigo via {{mail}}",
+			"im-sending-you-to-your-mail": "Estou te enviando para seu email",
+			"ok-here-you-go": "Ok, aqui está"
+		}
+	},
 	"components": {
 		"home": {
 			"fullstack-developer": "Desenvolvedor Fullstack.",
@@ -6,7 +29,7 @@
 		},
 		"header": {
 			"portfolio": "Portfólio André Pinto",
-			"contact": "Contact"
+			"contact": "Contato"
 		},
 		"experience": {
 			"present": "Presente",

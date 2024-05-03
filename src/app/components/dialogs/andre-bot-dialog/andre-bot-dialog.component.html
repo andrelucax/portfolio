@@ -1,10 +1,9 @@
-<!-- TODO i18n -->
 <div class="chat">
 	<mat-toolbar color="primary" class="p-0">
 		<img class="photo m-3" src="/assets/img/andrelucax.jpg">
 		<div class="d-flex flex-column justify-content-center">
-			<h5 class="mb-0">André Bot</h5>
-			<span>Ask me a question</span>
+			<h5 class="mb-0">{{'components.dialogs.andre-bot-dialog.andre-bot' | translate}}</h5>
+			<span>{{'components.dialogs.andre-bot-dialog.ask-me-a-question' | translate}}</span>
 		</div>
 		<mat-button class="close-button me-3" mat-button-icon mat-dialog-close>
 			<mat-icon>close</mat-icon>
@@ -53,8 +52,8 @@
 </ng-template>
 
 <ng-template #questionOption let-type="type">
-	<span *ngIf="type == QuestionOptionTypes.Hello" [class]="questionOptionClasses" (click)="hello()">Just saying hello!</span>
-	<span *ngIf="type == QuestionOptionTypes.Hire" [class]="questionOptionClasses" (click)="hire()">We'd like to hire you</span>
-	<span *ngIf="type == QuestionOptionTypes.Message" [class]="questionOptionClasses" (click)="sendMessage()">Send a message</span>
-	<span *ngIf="type == QuestionOptionTypes.Options" [class]="questionOptionClasses" (click)="showOptions()">See other options</span>
+	<span *ngIf="type == QuestionOptionTypes.Hello" [class]="questionOptionClasses" (click)="hello()">{{'components.dialogs.andre-bot-dialog.just-saying-hello' | translate}}</span>
+	<span *ngIf="type == QuestionOptionTypes.Hire" [class]="questionOptionClasses" (click)="hire()">{{'components.dialogs.andre-bot-dialog.we-like-to-hire-you' | translate}}</span>
+	<span *ngIf="type == QuestionOptionTypes.Message" [class]="questionOptionClasses" (click)="sendMessage()">{{'components.dialogs.andre-bot-dialog.send-a-message' | translate}}</span>
+	<span *ngIf="type == QuestionOptionTypes.Options" [class]="questionOptionClasses" (click)="showOptions()">{{'components.dialogs.andre-bot-dialog.see-other-options' | translate}}</span>
 </ng-template>

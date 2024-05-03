@@ -1,11 +1,12 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-andre-bot-dialog',
   templateUrl: './andre-bot-dialog.component.html',
   styleUrl: './andre-bot-dialog.component.scss'
 })
-export class AndreBotDialogComponent {
+export class AndreBotDialogComponent implements OnInit {
 
 	@ViewChild("content")
 	content: ElementRef;
@@ -17,20 +18,28 @@ export class AndreBotDialogComponent {
 
 	optionType: OptionsTypes = OptionsTypes.Default;
 
-	messages: Message[] = [
-		{
-			message: "Hello!",
-			answer: true,
-		},
-		{
-			message: "I'm André Bot. I'm here to help you.",
-			answer: true,
-		},
-		{
-			message: "How can I help?",
-			answer: true,
-		},
-	];
+	messages: Message[] = [];
+
+	constructor(
+		private translate: TranslatePipe,
+	) { }
+
+	ngOnInit(): void {
+		this.messages.push(
+			{
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.hello"),
+				answer: true,
+			},
+			{
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.im-andre-bot"),
+				answer: true,
+			},
+			{
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.how-can-i-help"),
+				answer: true,
+			},
+		);
+	}
 
 	readonly questionOptionClasses: string = "p-3 border-primary bg-primary-contrast message question-option text-primary w-100 d-flex justify-content-center";
 
@@ -57,26 +66,26 @@ export class AndreBotDialogComponent {
 	hello() {
 		this.messages.push(
 			{
-				message: 'Just saying hello!',
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.just-saying-hello"),
 				answer: false
 			}
 		);
 
 		let answers: Message[] = [
 			{
-				message: "Hi!",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.hi"),
 				answer: true,
 			},
 			{
-				message: "Thanks for passing by",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.thanks-for-passing-by"),
 				answer: true,
 			},
 			{
-				message: "Hope you're having fun 😉",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.hope-youre-having-fun"),
 				answer: true,
 			},
 			{
-				message: "Can I do anything else for you?",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.can-i-do-anything-else-for-you"),
 				answer: true,
 			},
 		];
@@ -87,22 +96,22 @@ export class AndreBotDialogComponent {
 	hire() {
 		this.messages.push(
 			{
-				message: "We'd like to hire you",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.wed-like-to-hire-you"),
 				answer: false
 			}
 		);
 
 		let answers: Message[] = [
 			{
-				message: "That's awesome!",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.thats-awesome"),
 				answer: true,
 			},
 			{
-				message: "Send me a message and let's chat further!",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.send me a message-and-lets-chat-further"),
 				answer: true,
 			},
 			{
-				message: "You can call me at andrelucax@gmail.com",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.you-can-call-me-at", { mail: "andrelucax@gmail.com" }),
 				answer: true,
 			},
 		];
@@ -114,18 +123,18 @@ export class AndreBotDialogComponent {
 		this.isAnswering = true;
 		this.messages.push(
 			{
-				message: "Send a message",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.send-a-message"),
 				answer: false
 			}
 		);
 
 		let answers: Message[] = [
 			{
-				message: "I'm sending you to your mail",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.im-sending-you-to-your-mail"),
 				answer: true,
 			},
 			{
-				message: "Can I do anything else for you?",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.can-i-do-anything-else-for-you"),
 				answer: true,
 			},
 		];
@@ -138,14 +147,14 @@ export class AndreBotDialogComponent {
 		this.isAnswering = true;
 		this.messages.push(
 			{
-				message: "See other options",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.see-other-options"),
 				answer: false
 			}
 		);
 
 		let messagesToAdd: Message[] = [
 			{
-				message: "Ok, here you go",
+				message: this.translate.transform("components.dialogs.andre-bot-dialog.ok-here-you-go"),
 				answer: true,
 			},
 		];
