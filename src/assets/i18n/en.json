@@ -38,9 +38,9 @@
 			"present": "Present",
 			"fullstack-developer": "Fullstack Developer",
 			"internship-student": "Internship Student",
-			"lacuna-software-experience": "Developing an application for registration authorities. Participating in all stages of development, including database modeling, backend and frontend. Working on all software functionalities such as video conferencing, biometric collection, issuance of digital certificates and digital signatures. Developing unit tests, integration tests and E2E tests (creating standards adhered to by the company). Maintenance of existing applications, with code improvements, development of new features and bug fixes. Development of multi-tenant applications.",
-			"tribunal-de-contas-da-uniao-experience": "Maintaining and developing new applications for internal use.",
-			"companhia-da-terra-experience": "Developing an application for a pet shop.",
+			"lacuna-software-experience": "Developed software for registration authorities following Brazil, Cape Verde and Paraguay standards, engaging in all stages of development, from requirement gathering and analysis to client meetings, database modeling, backend, frontend, and testing. Implemented various features including video conferencing, biometric data collection, digital certificate issuance, digital signature, and automatic email sending. Established unit, integration, and end-to-end testing standards adopted as the company's project basis. Contributed to existing projects by developing new functions, maintenance, code improvements and bug fixes. Designed a standard for multi-tenant applications and created a real-time communication system for biometric authentication validation, including liveness verification. Additionally, updated .NET and Angular frameworks for various systems, including the company's foundational project.",
+			"tribunal-de-contas-da-uniao-experience": "Developed new applications and maintained existing ones, enhancing team performance and transparency.",
+			"companhia-da-terra-experience": "Developed a companion app for the pet shop, enabling customers to receive reminders for their pets medications and vaccines, thereby increasing store sales and improving pets lives.",
 			"view-full-resume": "View full resume"
 		},
 		"layout": {

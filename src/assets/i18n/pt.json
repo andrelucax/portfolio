@@ -38,9 +38,9 @@
 			"present": "Presente",
 			"fullstack-developer": "Desenvolvedor Fullstack",
 			"internship-student": "Estágio",
-			"lacuna-software-experience": "Desenvolvendo uma aplicação para autoridades de registro. Participando de todas as etapas do desenvolvimento, incluindo modelagem de banco de dados, backend e frontend. Trabalhando em todas as funcionalidades do software como videoconferência, coleta biométrica, emissão de certificados digitais e assinatura digital. Desenvolvendo testes unitários, testes de integração e testes E2E (criando os padrões aderidos pela empresa). Manutenção de aplicações existentes, com melhorias de código, desenvolvimento de novas funcionalidades e correção de bugs. Desenvolvimento de aplicações multi tenant.",
-			"tribunal-de-contas-da-uniao-experience": "Dando manutenção e desenvolvendo novos aplicativos para uso interno.",
-			"companhia-da-terra-experience": "Desenvolvendo uma aplicação para um pet shop.",
+			"lacuna-software-experience": "Desenvolvi software para autoridades de registro conforme os padrões do Brasil, Cabo Verde e Paraguai, participando de todas as etapas do desenvolvimento, desde a coleta e análise de requisitos até reuniões com clientes, modelagem de banco de dados, backend, frontend e testes. Implementei diversas funcionalidades, incluindo videoconferência, coleta de dados biométricos, emissão de certificados digitais, assinatura digital e envio automático de e-mails. Estabeleci padrões de testes unitários, de integração e de ponta a ponta adotados como base dos projetos da empresa. Contribuí para projetos existentes desenvolvendo novas funções, manutenção, melhorias de código e correção de bugs. Desenhei um padrão para aplicativos multi-tenant e criei um sistema de comunicação em tempo real para validação de autenticação biométrica, incluindo verificação de liveness. Além disso, atualizei os frameworks .NET e Angular para diversos sistemas, incluindo o projeto fundamental da empresa.",
+			"tribunal-de-contas-da-uniao-experience": "Desenvolvi novas aplicações e mantive as existentes, aprimorando o desempenho da equipe e a transparência.",
+			"companhia-da-terra-experience": "Desenvolvi um aplicativo de acompanhamento para o pet shop, permitindo que os clientes recebam lembretes de medicações e vacinas para seus pets, aumentando as vendas da loja e melhorando a vida dos animais de estimação.",
 			"view-full-resume": "Ver currículo completo"
 		},
 		"layout": {
